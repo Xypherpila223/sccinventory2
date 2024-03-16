@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" &&
     // Execute the statement
     if ($stmt->execute()) {
         // If insertion is successful, redirect to the next HTML page
-        header("Location: 7ticket.php");
+        header("Location: 7ticket.html");
         exit();
     } else {
         // If insertion fails, show an alert and redirect back to the form page
