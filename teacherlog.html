@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>TEACHER LOGIN</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -27,6 +27,7 @@
             border-radius: 5px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             background-color: #fff; /* Added background color */
+            position: relative; /* Added relative positioning */
         }
         .left-side,
         .right-side {
@@ -36,14 +37,29 @@
             align-items: center; /* Added align items center */
             flex: 1;
             padding: 20px;
+            position: relative; /* Added relative positioning */
+            z-index: 1; /* Ensure the content is above the blurred background */
         }
+
+        .right-side::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), linear-gradient(to bottom, #007bff, #ffffff, #cccccc);
+            backdrop-filter: blur(10px); /* Adjust blur radius as needed */
+            z-index: -1; /* Ensure the pseudo-element is behind the content */
+        }
+
         .logo {
             text-align: center;
             margin-bottom: 20px;
         }
         .logo img {
-            max-width: 300px; /* Adjusted max width */
-            max-height: 300px; /* Adjusted max height */
+            max-width: 275px; /* Adjusted max width */
+            max-height: 400px; /* Adjusted max height */
         }
         .form-group {
             margin-bottom: 15px;
@@ -62,15 +78,15 @@
         }
 
         .login-method a {
-    color: gray;
-    text-decoration: none;
-    margin-right: 0px; /* Add spacing between links */
-    margin-left: 20px;
-}
+            color: gray;
+            text-decoration: none;
+            margin-right: 0px; /* Add spacing between links */
+            margin-left: 20px;
+        }
 
-.login-method a:hover {
-    text-decoration: underline;
-}
+        .login-method a:hover {
+            text-decoration: underline;
+        }
 
         .login-method button {
             background-color: #007bff;
@@ -84,10 +100,11 @@
             font-size: 16px;
             transition: background-color 0.3s ease;
         }
+
         .login-method button:hover {
             background-color: #0056b3;
-            
         }
+
         #toggleMethod {
             background-color: transparent;
             border: none;
@@ -95,9 +112,11 @@
             text-decoration: underline;
             cursor: pointer;
         }
+
         #toggleMethod:hover {
             color: #333;
         }
+
         #loginButton {
             background-color: #3399ff; /* Changed background color */
             padding: 20px 75px;
@@ -105,10 +124,12 @@
             border-radius: 8px; /* Added border radius */
             color: #fff; /* Changed text color */
         }
+
         #loginButton:hover {
             background-color: #0056b3;
             cursor: pointer;
         }
+
         .right-side {
             display: flex;
             flex-direction: column;
@@ -129,7 +150,8 @@
         <div class="login-box">
             <div class="left-side">
                 <div class="logo">
-                    <img src="https://via.placeholder.com/200" alt="Student Friendly Logo"> <!-- Placeholder image URL -->
+                    <img src="teacher-removebg-preview.png" alt="Student Friendly Logo"> <!-- Placeholder image URL -->
+                    <div style= "text-align: center; margin-top: 5px; font-size: 22px;font-weight: bold; color: rgb(34, 137, 248);">TEACHER</div>
                 </div>
             </div>
             <div class="right-side">
@@ -143,13 +165,13 @@
                 </div>
                 <div class="login-method">
                     <div class="login-method">
-                        <a href="teacherreg.html" style="color: gray;">Register?</a><a href="teacherfrgt.html" style="color: gray;">Forgot Password?</a>
+                        <a href="#" style="color: gray;">Register?</a><a href="#" style="color: gray;">Forgot Password?</a>
                     </div>
                     
                     <button id="toggleMethod">Login with Email</button>
                 </div>
                 <div class="form-group">
-                    <button href="#" id="loginButton">Login</button>
+                    <button id="loginButton">Login</button>
                 </div>
             </div>
         </div>
@@ -181,7 +203,6 @@
         loginMethodButton.addEventListener('click', () => {
             // Perform login logic here
             alert('Login button clicked!');
-            window.location.href = 'page1.html';
         });
     </script>
 </body>
