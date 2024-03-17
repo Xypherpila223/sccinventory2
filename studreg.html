@@ -9,9 +9,12 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-image: linear-gradient(to bottom, #007bff, #ffffff, #cccccc); /* Gradient background */
             display: flex;
-            flex-direction: column;
-            min-height: 100vh; /* Ensure the body takes up at least the full height of the viewport */
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative; /* Needed for footer positioning */
         }
         .container {
             display: flex;
@@ -24,9 +27,6 @@
             background-color: rgba(255, 255, 255, 0.5); /* Transparent background */
             border-radius: 10px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-            flex: 1; /* Grow to fill remaining vertical space */
-            overflow-y: auto; /* Allow the container to scroll if content overflows */
-            margin-bottom: 20px; /* Add space between the container and the footer */
         }
         .center-text {
             margin-bottom: 20px; /* Add space between the inputs and the centered text */
@@ -79,7 +79,7 @@
             font-size: 12px;
             margin-top: 5px;
         }
-           footer {
+        footer {
             background-color: #ccc;
             text-align: center;
             padding: 10px;
@@ -176,7 +176,7 @@
         <div id="error-message" class="error"></div>
     </div>
     <footer>
-        <p>© SCCInventory - For school purpose only</p>
+        <p>&copy; SCCInventory - For school purpose only</p>
     </footer>
     <script>
         document.getElementById('registerButton').addEventListener('click', function() {
